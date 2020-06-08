@@ -17,6 +17,8 @@ import { PAGES_ROUTES } from './pages-routing.module';
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficasComponent } from '../components/graficas/graficas.component';
 import { AccountSethingsComponent } from './account-sethings/account-sethings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -28,7 +30,9 @@ import { AccountSethingsComponent } from './account-sethings/account-sethings.co
         Graficas1Component,
         IncrementadorComponent,
         GraficasComponent,
-        AccountSethingsComponent
+        AccountSethingsComponent,
+        PromesasComponent,
+        RxjsComponent
     ],
     exports: [
         DashboardComponent,
