@@ -7,6 +7,7 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { AccountSethingsComponent } from './account-sethings/account-sethings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { LoginGuardGuard } from '../service/guards/login-guard.guard';
 
 
 
@@ -14,6 +15,7 @@ const pagesRoutes: Routes = [
     {
         path: '',
         component: PagesComponent,
+        canActivate: [ LoginGuardGuard ],
         children: [
             { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard', descripcion: 'Pagina de inicio'} },
             { path: 'progress', component: ProgressComponent, data: { titulo: 'Progres', descripcion: 'Pagina con la barra de progreso dinamico'} },
