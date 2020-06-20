@@ -8,6 +8,7 @@ import { AccountSethingsComponent } from './account-sethings/account-sethings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../service/guards/login-guard.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -23,6 +24,7 @@ const pagesRoutes: Routes = [
             { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas', descripcion: 'Pagina con las promesas'}  },
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs', descripcion: 'Pagina con observables y ejemplos de operadores de rxjs'}  },
             { path: 'accountsethings', component: AccountSethingsComponent, data: { titulo: 'Ajustes del tema', descripcion: 'Pagina con los diferentes temas a aplicar a la pagina'}  },
+            { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil del usuario', descripcion: 'Paginacon el perfil de los usuairos'}  },
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]
     }

@@ -6,3 +6,18 @@
 .pointer {
     cursor: pointer;
 }
+
+.w150{
+    width: 150px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+}
+.centrado {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}

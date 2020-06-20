@@ -1,0 +1,7 @@
+.centrado {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}

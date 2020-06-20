@@ -6,9 +6,11 @@ import {
   SettingsService,
   SidebarService,
   SharedService,
-  UsuarioService
+  UsuarioService,
+  SubirArchivoService
 } from './service.index';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [SettingsService,
               SidebarService,
               SharedService,
-              UsuarioService
+              UsuarioService,
+              SubirArchivoService
             ]
 })
 export class ServiceModule { }

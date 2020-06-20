@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
         cookiepolicy: 'single_host_origin',
         scope: 'profile'
       });
-      console.log('aqui');
       this.attachSingin( document.getElementById('btnGoogle') );
 
     });
