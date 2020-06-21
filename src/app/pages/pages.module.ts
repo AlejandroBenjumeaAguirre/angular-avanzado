@@ -22,6 +22,8 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CommonModule } from '@angular/common';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalUpdateComponent } from '../components/modal-update/modal-update.component';
 
 
 
@@ -37,7 +39,9 @@ import { CommonModule } from '@angular/common';
         AccountSethingsComponent,
         PromesasComponent,
         RxjsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UsuariosComponent,
+        ModalUpdateComponent
     ],
     exports: [
         DashboardComponent,
