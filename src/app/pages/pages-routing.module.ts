@@ -10,6 +10,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../service/guards/login-guard.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 
 
@@ -26,8 +29,11 @@ const pagesRoutes: Routes = [
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs', descripcion: 'Pagina con observables y ejemplos de operadores de rxjs'}  },
             { path: 'accountsethings', component: AccountSethingsComponent, data: { titulo: 'Ajustes del tema', descripcion: 'Pagina con los diferentes temas a aplicar a la pagina'}  },
 
-            // Opciones de usuarios
+            // Opciones de usuarios, medicos y hospitales
             { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Opciones del usuario', descripcion: 'Pagina para mantenimiento de los usuarios'} },
+            { path: 'medicos', component: MedicosComponent, data: { titulo: 'Opciones de medicos', descripcion: 'Pagina para mantenimiento de los medicos'} },
+            { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Opciones del medico', descripcion: 'Pagina para mantenimiento del medico'} },
+            { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Opciones del Hospital', descripcion: 'Pagina que me muestra los hospitales y sus opciones de modificacion y eleminacion'} },
             { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil del usuario', descripcion: 'Paginacon el perfil de los usuairos'}  },
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]

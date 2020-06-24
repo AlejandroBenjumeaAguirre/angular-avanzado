@@ -10,6 +10,8 @@
     </div>
 </div>
 
+<h3 *ngIf="noencontrado" class="title"> No encontramos ningun registro con el termino de busqueda. </h3>
+
 <div class="row animated fadeIn" *ngIf="cargando">
     <div class="col-sm-12">
         <div class="alert alert-warning text-center">

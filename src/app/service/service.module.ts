@@ -7,8 +7,11 @@ import {
   SidebarService,
   SharedService,
   UsuarioService,
-  SubirArchivoService
+  SubirArchivoService,
+  HospitalesService,
+  MedicoService
 } from './service.index';
+
 import { HttpClientModule } from '@angular/common/http';
 import { ModalUploadService } from '../components/modal-update/modal-upload.service';
 
@@ -25,7 +28,9 @@ import { ModalUploadService } from '../components/modal-update/modal-upload.serv
               SharedService,
               UsuarioService,
               SubirArchivoService,
-              ModalUploadService
+              ModalUploadService,
+              HospitalesService,
+              MedicoService
             ]
 })
 export class ServiceModule { }

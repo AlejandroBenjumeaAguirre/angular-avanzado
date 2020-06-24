@@ -22,7 +22,7 @@ export class SidebarService {
       icono: 'mdi mdi-account-circle',
       submenu: [
         { titulo: 'Usuarios', icono: 'mdi mdi-account', url: '/usuarios'},
-        { titulo: 'Medicos', icono: 'mdi mdi-hospital', url: '/Medicos'},
+        { titulo: 'Medicos', icono: 'mdi mdi-hospital', url: '/medicos'},
         { titulo: 'Hospitales', icono: 'mdi mdi-hospital-building', url: '/hospitales'}
       ]
     }

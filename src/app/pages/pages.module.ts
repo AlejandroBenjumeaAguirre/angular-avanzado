@@ -24,6 +24,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { CommonModule } from '@angular/common';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModalUpdateComponent } from '../components/modal-update/modal-update.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 
 
@@ -41,7 +44,10 @@ import { ModalUpdateComponent } from '../components/modal-update/modal-update.co
         RxjsComponent,
         ProfileComponent,
         UsuariosComponent,
-        ModalUpdateComponent
+        ModalUpdateComponent,
+        HospitalesComponent,
+        MedicosComponent,
+        MedicoComponent
     ],
     exports: [
         DashboardComponent,

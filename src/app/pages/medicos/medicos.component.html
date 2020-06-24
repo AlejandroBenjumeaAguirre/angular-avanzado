@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscarMedico( input.value )" class="form-control" type="text" placeholder="Buscar Medico...">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 *ngIf="noencontrado" class="title"> No se encontraron registros con el termino de búsqueda </h3>
+
+<div class="row animated fadeIn" *ngIf="cargando">
+    <div class="col-sm-12">
+        <div class="alert alert-warning text-center">
+            <strong>Cargando...</strong>
+            <br>
+            <i class="fa fa-refresh fa-spin fa-2x"></i>
+            <br>
+            <span>Espere por favor</span>
+        </div>        
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button [routerLink]="['/medico','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                        <i class="fa fa-plus"></i>
+                         Crear Médico
+                    </button>
+                </div>
+
+                <h3 class="card-title">Médicos existentes ( <small> {{total}}</small> ) </h3>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Nombre</th>
+                            <th>Hospital</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let medico of medicos">
+                            <td> <img [src]=" medico.img | imagen:'medicos' " class="img50 img-circle w70" > </td>
+                            <td> {{ medico.nombre }} </td>
+                            <td> {{ medico.hospital.nombre }} </td>
+                            <td>
+                                <button [routerLink]="['/medico', medico._id ]" class="btn btn-primary">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                &nbsp;
+                                <button (click)="eliminarMedico( medico._id )" class="btn btn-danger">
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </td>
+                        </tr>
+                           
+                    </tbody>
+                    
+                </table>
+                <button (click)="cambiarDesde( -5 )" class="btn btn-secondary">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+                &nbsp;
+                <button (click)="cambiarDesde( 5 )" class="btn btn-secondary">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>

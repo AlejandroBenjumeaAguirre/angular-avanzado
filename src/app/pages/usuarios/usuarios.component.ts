@@ -19,6 +19,8 @@ export class UsuariosComponent implements OnInit {
 
   cargando: boolean = true;
 
+  noencontrado: boolean;
+
   constructor( public usuarioService: UsuarioService,
                public modalUpdateService: ModalUploadService ) { }
 
@@ -33,11 +35,10 @@ export class UsuariosComponent implements OnInit {
     this.usuarioService.cargarUsuarios( this.desde )
               .subscribe( (resp: any ) => {
 
-                console.log(resp.usuarios);
+                console.log(resp.usuarios );
 
                 this.totalRegistros = resp.total;
                 this.usuarios = resp.usuarios;
-                this.rol = resp.usuarios.role;
                 this.cargando = false;
               });
   }
@@ -63,6 +64,7 @@ export class UsuariosComponent implements OnInit {
 
     if ( termino.length <= 0 ) {
       this.cargarUsuarios();
+      this.noencontrado = false;
       return;
     }
 
@@ -70,8 +72,17 @@ export class UsuariosComponent implements OnInit {
 
     this.usuarioService.buscarUsuarios(termino)
         .subscribe( (usuarios: Usuario[]) => {
-                    this.usuarios = usuarios;
-                    this.cargando = false;
+
+                    if ( usuarios.length === 0 ){
+                      this.noencontrado = true;
+                      this.cargando = false;
+                    } else {
+                      this.totalRegistros = usuarios.length;
+                      this.noencontrado = false;
+                      this.usuarios = usuarios;
+                      this.cargando = false;
+                    }
+
                   });
   }
 
@@ -96,7 +107,7 @@ export class UsuariosComponent implements OnInit {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Si eliminar el usuario!'
     }).then( borrar => {
-      if (borrar) {
+      if (borrar.value) {
         this.usuarioService.borrarUsuario( usuario._id ).subscribe( resp => {
           console.log(resp);
           Swal.fire(
@@ -106,6 +117,8 @@ export class UsuariosComponent implements OnInit {
           );
         });
         this.cargarUsuarios();
+      }else{
+        return;
       }
     });
 
