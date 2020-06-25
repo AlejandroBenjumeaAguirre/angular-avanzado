@@ -7,7 +7,7 @@ export class Usuario {
         public correo: string,
         public password: string,
         public img?: string,
-        public role?: string,
+        public rol?: string,
         public google?: boolean,
         // tslint:disable-next-line:variable-name
         public _id?: string

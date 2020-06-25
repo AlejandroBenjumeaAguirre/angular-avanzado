@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Usuarios</h4>
+                <h4 class="card-title text-center" *ngIf="usuario.length === 0"> No se encontraron registros.</h4>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr [routerLink]="['/usuarios']" *ngFor="let usuario of usuario" class="pointer">
+                            <td> <img [src]=" usuario.img | imagen " class="rounded img-fluid"> </td>
+                            <td> {{ usuario.nombre }} {{ usuario.apellido}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Médicos</h4>
+                <h4 class="card-title text-center" *ngIf="medicos.length === 0"> No se encontraron registros.</h4>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr [routerLink]="['/medico', medico._id]" *ngFor="let medico of medicos" class="pointer">
+                            <td> <img [src]=" medico.img | imagen:'medicos' " class="rounded img-fluid">  </td>
+                            <td> {{ medico.nombre }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Hospitales</h4>
+                <h4 class="card-title text-center" *ngIf="hospitales.length === 0"> No se encontraron registros.</h4>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr [routerLink]="['/hospitales']" *ngFor="let hospital of hospitales" class="pointer">
+                            <td> <img [src]=" hospital.img | imagen:'hospitales'" class="rounded img-fluid"> </td>
+                            <td> {{ hospital.nombre }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

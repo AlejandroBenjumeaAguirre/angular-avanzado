@@ -34,9 +34,6 @@ export class UsuariosComponent implements OnInit {
     this.cargando = true;
     this.usuarioService.cargarUsuarios( this.desde )
               .subscribe( (resp: any ) => {
-
-                console.log(resp.usuarios );
-
                 this.totalRegistros = resp.total;
                 this.usuarios = resp.usuarios;
                 this.cargando = false;
@@ -109,7 +106,6 @@ export class UsuariosComponent implements OnInit {
     }).then( borrar => {
       if (borrar.value) {
         this.usuarioService.borrarUsuario( usuario._id ).subscribe( resp => {
-          console.log(resp);
           Swal.fire(
             'Eliminado!',
             'Usted a eliminado al usuario:',
@@ -125,14 +121,11 @@ export class UsuariosComponent implements OnInit {
   }
 
   actualizarUsuario( usuario: Usuario ) {
-    console.log(usuario);
     this.usuarioService.actualizarUsuario( usuario ).subscribe();
   }
 
   mostrarModel( id: string ){
-
       this.modalUpdateService.mostrarModal( 'usuarios', id );
-
   }
 
 }
