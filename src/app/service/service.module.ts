@@ -11,7 +11,8 @@ import {
   HospitalesService,
   MedicoService,
   LoginGuardGuard,
-  AdminGuard
+  AdminGuard,
+  VerificaTokenGuard
 } from './service.index';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -34,7 +35,8 @@ import { ModalUploadService } from '../components/modal-update/modal-upload.serv
               HospitalesService,
               MedicoService,
               LoginGuardGuard,
-              AdminGuard
+              AdminGuard,
+              VerificaTokenGuard
             ]
 })
 export class ServiceModule { }

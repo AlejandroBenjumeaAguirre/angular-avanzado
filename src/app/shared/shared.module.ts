@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 
 // Pipes
 import { PipesModule } from '../pipes/pipes.module';
+import { ModalUpdateComponent } from '../components/modal-update/modal-update.component';
 
 
 
@@ -22,13 +23,15 @@ import { PipesModule } from '../pipes/pipes.module';
         HeaderComponent,
         SidebarComponent,
         NopagesfoundComponent,
-        BreadcrumbsComponent
+        BreadcrumbsComponent,
+        ModalUpdateComponent
     ],
     exports: [
         HeaderComponent,
         SidebarComponent,
         NopagesfoundComponent,
-        BreadcrumbsComponent
+        BreadcrumbsComponent,
+        ModalUpdateComponent
     ]
 
 })

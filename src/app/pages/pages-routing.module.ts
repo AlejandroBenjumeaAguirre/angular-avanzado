@@ -15,18 +15,18 @@ import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 
 // Guard
-import { LoginGuardGuard } from '../service/guards/login-guard.guard';
 import { AdminGuard } from '../service/service.index';
+import { VerificaTokenGuard } from '../service/guards/verifica-token.guard';
 
 
 
 const pagesRoutes: Routes = [
-    {
-        path: '',
-        component: PagesComponent,
-        canActivate: [ LoginGuardGuard ],
-        children: [
-            { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard', descripcion: 'Pagina de inicio'} },
+            {
+                path: 'dashboard',
+                component: DashboardComponent,
+                canActivate: [ VerificaTokenGuard ],
+                data: { titulo: 'Dashboard', descripcion: 'Pagina de inicio'}
+            },
             { path: 'progress', component: ProgressComponent, data: { titulo: 'Progres', descripcion: 'Pagina con la barra de progreso dinamico'} },
             { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas', descripcion: 'Pagina con graficas'}  },
             { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas', descripcion: 'Pagina con las promesas'}  },
@@ -46,8 +46,6 @@ const pagesRoutes: Routes = [
             { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Opciones del Hospital', descripcion: 'Pagina que me muestra los hospitales y sus opciones de modificacion y eleminacion'} },
             { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil del usuario', descripcion: 'Paginacon el perfil de los usuairos'}  },
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
-        ]
-    }
 ];
 
 

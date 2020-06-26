@@ -1,3 +1,4 @@
+
 export { MedicoService } from './medico/medico.service';
 export { HospitalesService } from './hospital/hospitales.service';
 export { SubirArchivoService } from './subir-archivo/subir-archivo.service';
@@ -9,3 +10,4 @@ export { SidebarService } from './shared/sidebar.service';
 // Guard
 export { LoginGuardGuard } from './guards/login-guard.guard';
 export { AdminGuard } from './guards/admin.guard';
+export { VerificaTokenGuard } from './guards/verifica-token.guard';

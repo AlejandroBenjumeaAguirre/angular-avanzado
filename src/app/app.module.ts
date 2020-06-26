@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { APP_ROUTES } from './app-routing.module';
 
 // Modulos
-import { PagesModule } from './pages/pages.module';
+/* import { PagesModule } from './pages/pages.module'; */
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { ChartsModule } from 'ng2-charts';
 
 // Servicios
 import { ServiceModule } from './service/service.module';
+import { PagesComponent } from './pages/pages.component';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -23,16 +25,17 @@ import { ServiceModule } from './service/service.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
-    PagesModule,
     FormsModule,
     ReactiveFormsModule,
     ChartsModule,
-    ServiceModule
+    ServiceModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
